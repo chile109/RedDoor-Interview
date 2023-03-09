@@ -34,6 +34,33 @@ namespace RedDoor
 
         public static bool IsSafe(int[,] board, int row, int col, int n)
         {
+            // Check row on the left
+            for (int i = 0; i < col; i++)
+            {
+                if (board[row, i] == 1)
+                {
+                    return false;
+                }
+            }
+
+            // Check upper diagonal on left side
+            for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)
+            {
+                if (board[i, j] == 1)
+                {
+                    return false;
+                }
+            }
+
+            // Check lower diagonal on left side
+            for (int i = row, j = col; i < n && j >= 0; i++, j--)
+            {
+                if (board[i, j] == 1)
+                {
+                    return false;
+                }
+            }
+
             return true;
         }
 

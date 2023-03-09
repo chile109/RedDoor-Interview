@@ -22,11 +22,39 @@ namespace RedDoor
             watch.Stop();
 
             Console.WriteLine($"Number of solutions: {numSolutions}, runtime:{watch.Elapsed} ");
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
         }
 
         public static int SolveNQueens(int[,] board, int col, int n, bool canPrint = false)
         {
             int numSolutions = 0;
+
+            if (col >= n)
+            {
+                // Base case: all queens have been placed, solution found
+                if (canPrint)
+                {
+                    var graph = GetBoardGraph(board);
+                    Console.WriteLine(graph);
+                }
+                return 1;
+            }
+
+            for (int row = 0; row < n; row++)
+            {
+                if (IsSafe(board, row, col, n))
+                {
+                    // Place a queen in the current cell
+                    board[row, col] = 1;
+
+                    // Recursively search for solutions with this queen placement
+                    numSolutions += SolveNQueens(board, col + 1, n, canPrint);
+
+                    // Remove the queen from the current cell and backtrack
+                    board[row, col] = 0;
+                }
+            }
 
             // Return the total number of solutions found
             return numSolutions;

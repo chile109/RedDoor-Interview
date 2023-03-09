@@ -66,7 +66,7 @@ public class Tests
             };
 
         // Act
-        var result = RedDoor.NQueensSolver.IsSafe(stubBoard, 1, 2, 4);
+        var result = RedDoor.NQueensSolver.IsSafe(stubBoard, 1, 0, 4);
 
         // Assert
         Assert.AreEqual(false, result);
@@ -84,7 +84,7 @@ public class Tests
             };
 
         // Act
-        var result = RedDoor.NQueensSolver.IsSafe(stubBoard, 1, 0, 4);
+        var result = RedDoor.NQueensSolver.IsSafe(stubBoard, 1, 3, 4);
 
         // Assert
         Assert.AreEqual(false, result);

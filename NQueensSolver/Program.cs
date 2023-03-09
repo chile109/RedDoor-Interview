@@ -22,6 +22,8 @@ namespace RedDoor
             watch.Stop();
 
             Console.WriteLine($"Number of solutions: {numSolutions}, runtime:{watch.Elapsed} ");
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
         }
 
         public static int SolveNQueens(int[,] board, int col, int n, bool canPrint = false)

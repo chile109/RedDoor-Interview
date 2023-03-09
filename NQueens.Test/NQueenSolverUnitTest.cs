@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace NQueens.Test;
 
@@ -88,5 +89,23 @@ public class Tests
 
         // Assert
         Assert.AreEqual(false, result);
+    }
+
+    [Test]
+    public void GetBoardGraph_Input4_GetBoard()
+    {
+        // Arrange
+        int[,] stubBoard = {
+                { 0, 1, 0, 0 },
+                { 0, 0, 0, 1 },
+                { 1, 0, 0, 0 },
+                { 0, 0, 1, 0 }
+            };
+
+        // Act
+        var actualprint = RedDoor.NQueensSolver.GetBoardGraph(stubBoard);
+
+        // Assert
+        Assert.AreEqual(actualprint, "0 1 0 0 \r\n0 0 0 1 \r\n1 0 0 0 \r\n0 0 1 0 \r\n");
     }
 }

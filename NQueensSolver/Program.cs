@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Diagnostics;
 
 namespace RedDoor
@@ -34,6 +35,14 @@ namespace RedDoor
         public static bool IsSafe(int[,] board, int row, int col, int n)
         {
             return true;
+        }
+
+        public static string GetBoardGraph(int[,] board)
+        {
+            int n = board.GetLength(0);
+            StringBuilder sb = new StringBuilder();
+
+            return sb.ToString();
         }
     }
 }

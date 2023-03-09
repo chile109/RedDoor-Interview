@@ -30,6 +30,11 @@ namespace RedDoor
             // Return the total number of solutions found
             return numSolutions;
         }
+
+        public static bool IsSafe(int[,] board, int row, int col, int n)
+        {
+            return true;
+        }
     }
 }
 

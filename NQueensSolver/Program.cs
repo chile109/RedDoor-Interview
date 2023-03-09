@@ -69,6 +69,15 @@ namespace RedDoor
             int n = board.GetLength(0);
             StringBuilder sb = new StringBuilder();
 
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    sb.Append(board[i, j] + " ");
+                }
+
+                sb.AppendLine();
+            }
             return sb.ToString();
         }
     }

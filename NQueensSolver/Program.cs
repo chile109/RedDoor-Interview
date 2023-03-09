@@ -8,12 +8,18 @@ namespace RedDoor
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number of queens: ");
-            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Wellcome! This is NQueensSolver that try solving the problem of placing N chess queens on an N×N chessboard so that no two queens threaten each other. I will answer the solution count~");
 
-            Console.WriteLine("Do you want to print solutions: true/false");
-            bool draw = bool.Parse(Console.ReadLine());
+            var draw = false;
+            Console.WriteLine("Do you want to print solutions in graph? (key in y for Yes or just answer solutions count");
+            if (Console.ReadLine() == "y")
+            {
+                draw = true;
+            }
 
+            Console.WriteLine("Enter the number of N: ");
+            var n = int.Parse(Console.ReadLine());
+            Console.WriteLine("===========================");
 
             int[,] board = new int[n, n];
 
@@ -26,6 +32,7 @@ namespace RedDoor
             Console.ReadKey();
         }
 
+        static int graphIndex = 1;
         public static int SolveNQueens(int[,] board, int col, int n, bool canPrint = false)
         {
             int numSolutions = 0;
@@ -36,6 +43,7 @@ namespace RedDoor
                 if (canPrint)
                 {
                     var graph = GetBoardGraph(board);
+                    Console.WriteLine($"===Graph {graphIndex++}===");
                     Console.WriteLine(graph);
                 }
                 return 1;

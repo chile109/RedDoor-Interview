@@ -4,10 +4,6 @@
 This is NQueensSolver that try solving the problem of placing N chess queens on an N×N chessboard so that no two queens threaten each other.
 Using depth-first backtracking algorithm for getting solutions count and drawing the board graph.
 
-For Binary review, please download from https://github.com/chile109/RedDoor-Interview/releases/tag/1.0
-
-Double click `NQueensSolver.exe` file on MS windows OS (Already tested on Win11).
-
 The following Instructions for Running, Building, and Testing the NQueensSolver Console App.
 
 ## Prerequisites
@@ -46,6 +42,10 @@ This command compiles the source code and generates an executable file in the bi
 ```bash
 dotnet build
 ```
+
+For Binary review, please download from https://github.com/chile109/RedDoor-Interview/releases/tag/1.0
+
+Double click `NQueensSolver.exe` file on MS windows OS (Already tested on Win11).
 
 ## Testing the Console App
 To test the NQueensSolver Console App, follow these steps:
